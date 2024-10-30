@@ -47,6 +47,7 @@ float divisao(){
    }
    if(b == 0){
    	printf("Não é possivel dividir numero por 0");
+    return 1;
    }
     return a / b;
 }
