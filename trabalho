@@ -1,0 +1,153 @@
+#include <stdio.h>
+#include <math.h>
+
+float soma(){
+    
+    float a, b;
+    printf("Insira o primeiro numero: ");
+    scanf("%f", &a);
+    printf("Insira o segundo numero: ");
+    scanf("%f", &b);
+    
+    return a + b;
+}
+
+float subtracao(){
+    
+    float a,  b;
+    printf("Insira o primeiro numero: ");
+    scanf("%f", &a);
+    printf("Insira o segundo numero: ");
+    scanf("%f", &b);
+    
+    return a - b;
+}
+
+float multiplicacao(){
+    
+    float a, b;
+    printf("Insira o primeiro numero: ");
+    scanf("%f", &a);
+    printf("Insira o segundo numero: ");
+    scanf("%f", &b);
+    
+    return a * b;
+}
+
+float divisao(){
+    
+    float a, b;
+    printf("Insira o primeiro numero: ");
+    scanf("%f", &a);
+    printf("Insira o segundo numero: ");
+    scanf("%f", &b);
+    
+    return a / b;
+}
+
+double expoente(){
+    
+    double a, b;
+    
+    printf("Insira o primeiro numero: ");
+    scanf("%lf", &a);
+    printf("Insira o segundo numero: ");
+    scanf("%lf", &b);
+    
+    return pow(a, b);
+} 
+
+double raiz(){
+    
+    double a;
+    printf("Insira o numero desejado: ");
+    scanf("%lf", &a);
+    return sqrt(a);
+}
+
+double bhaskara(){
+    
+    float a, b, c, delta, x1, x2;
+    printf("Digite um numero para o valor A: ");
+    scanf("%f", &a);
+    printf("Digite um numero para o valor B: ");
+    scanf("%f", &b);
+    printf("Digite um numero para o valor C: ");
+    scanf("%f", &c);
+    
+    delta = b * b - 4 * a * c;
+    
+    if(delta > 0){
+        x1 = (- b + sqrt(delta)) / (2 * a);
+        x2 = (- b - sqrt(delta)) / (2 * a);
+        
+    printf("As raizes são reais e iguais: X1 = %2.f e X2 = %2.f\n",  x1, x2);    
+    }
+}
+
+int main()
+{
+    int opcao;
+    double resultado;
+    
+    
+    while(opcao != 8){
+        
+        printf("Digite 1 para Soma: ");
+        printf("Digite 2 para Subtração: ");
+        printf("Digite 3 para Multiplicação: ");
+        printf("Digite 4 para Divisão: ");
+        printf("Digite 5 para Exponencial: ");
+        printf("Digite 6 para Raiz Quadratica: \n");
+        printf("Digite 7 para Bhaskara: ");
+        printf("Digite 8 para Sair: ");
+        scanf("%d", &opcao);
+        
+    switch(opcao){
+        
+        case 1:
+        resultado = soma();
+        printf("O resultado da Soma eh: %2.lf\n", resultado);
+        break;
+        
+        case 2:
+        resultado = subtracao();
+        printf("O resultado da Subtração eh: %2.lf\n", resultado);
+        break;
+        
+         case 3:
+        resultado = multiplicacao();
+        printf("O resultado da Multiplicação eh: %2.lf\n", resultado);
+        break;
+        
+        case 4:
+        resultado = divisao();
+        printf("O resultado da Divisão eh: %2.lf\n", resultado);
+        break;
+        
+        case 5:
+        resultado = expoente();
+        printf("O resultado da exponenciação eh: %lf\n", resultado);
+        break;
+        
+        case 6:
+        resultado = raiz();
+        printf("O resultado da Radiciação eh: %lf\n", resultado);
+        break;
+        
+        case 7:
+        resultado = bhaskara();
+        break;
+        
+        case 8:
+        return 0;
+        break;
+        
+        default:
+        printf("Digite um dos numeros apresentados: \n");
+        break;
+    }    
+        
+    }
+    return 0;
+}
